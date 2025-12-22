@@ -40,15 +40,15 @@ function showNotification(message, type = 'success') {
 // --- 1. SIMULASI DATABASE USER (List of Dictionaries) ---
 const usersDB = [
     { 
-        email: "budi@tanamkita.com", 
+        email: "ridwan@tanamkita.com", 
         password: "12345678", 
-        name: "Budi Santoso",
+        name: "Ridwan Haneef",
         role: "member"
     },
     { 
-        email: "siti@tanamkita.com", 
+        email: "Abdul@tanamkita.com", 
         password: "tanamansehat", 
-        name: "Siti Aminah",
+        name: "Abdul Hadir",
         role: "member"
     },
     { 
