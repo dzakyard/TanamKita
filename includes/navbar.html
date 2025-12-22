@@ -1,0 +1,42 @@
+<!-- NAVBAR FIXED -->
+<nav class="fixed w-full z-50 bg-primary text-white shadow-lg transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center gap-2 font-bold text-2xl cursor-pointer" onclick="smoothNavigate('index.html')">
+            <i class="ph-fill ph-plant text-secondary text-3xl"></i>
+            <span>Tanam<span class="text-secondary">Kita</span></span>
+        </div>
+
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex items-center gap-8">
+            <button onclick="smoothNavigate('index.html')" class="nav-link hover:text-secondary transition-colors font-medium border-b-2 border-transparent hover:border-secondary pb-1">Beranda</button>
+            <button onclick="smoothNavigate('produk.html')" class="nav-link hover:text-secondary transition-colors font-medium border-b-2 border-transparent hover:border-secondary pb-1">Produk</button>
+            <button onclick="smoothNavigate('blog.html')" class="nav-link hover:text-secondary transition-colors font-medium border-b-2 border-transparent hover:border-secondary pb-1">Blog</button>
+            <button onclick="smoothNavigate('hubungi.html')" class="nav-link hover:text-secondary transition-colors font-medium border-b-2 border-transparent hover:border-secondary pb-1">Hubungi</button>
+        </div>
+
+        <!-- Tombol Login & Daftar (Trigger Modal) -->
+        <div class="hidden md:flex items-center gap-4 text-sm font-semibold">
+            <button onclick="openModal('login-modal')" class="hover:text-secondary transition-colors">Masuk</button>
+            <button onclick="openModal('register-modal')" class="bg-white text-primary px-5 py-2 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
+                Daftar
+            </button>
+        </div>
+
+        <!-- Menu Mobile Button -->
+        <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
+            <i class="ph ph-list"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-emerald-800 p-4">
+        <button onclick="smoothNavigate('index.html')" class="block w-full text-left py-2 text-white hover:bg-emerald-800 px-2 rounded">Beranda</button>
+        <button onclick="smoothNavigate('produk.html')" class="block w-full text-left py-2 text-white hover:bg-emerald-800 px-2 rounded">Produk</button>
+        <button onclick="smoothNavigate('blog.html')" class="block w-full text-left py-2 text-white hover:bg-emerald-800 px-2 rounded">Blog</button>
+        <button onclick="smoothNavigate('hubungi.html')" class="block w-full text-left py-2 text-white hover:bg-emerald-800 px-2 rounded">Hubungi</button>
+    </div>
+</nav>
+
+<!-- RUANG KOSONG UNTUK NAVBAR -->
+<div class="h-20"></div>

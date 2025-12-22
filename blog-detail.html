@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Blog - TanamKita</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F5A3B',
+                        secondary: '#10B981',
+                        surface: '#F0FDF4',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/shared.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <div id="navbar-container"></div>
+    <div id="modals-container"></div>
+
+    <!-- ================= HALAMAN 4: DETAIL BLOG (DINAMIS) ================= -->
+    <main>
+        <article class="bg-white">
+            <!-- Header Artikel -->
+            <div class="relative h-[400px]">
+                <img id="detail-img" src="" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
+                    <div class="container mx-auto px-6 text-center text-white">
+                        <span id="detail-category" class="bg-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block">Tips</span>
+                        <h1 id="detail-title" class="text-3xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">Judul Artikel</h1>
+                        <div class="flex items-center justify-center gap-4 mt-6 text-sm text-gray-200">
+                            <span><i class="ph-fill ph-user"></i> Admin TanamKita</span>
+                            <span>•</span>
+                            <span id="detail-date"><i class="ph-fill ph-calendar"></i> Tanggal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 py-12 max-w-3xl">
+                <!-- Tombol Kembali -->
+                <button onclick="smoothNavigate('blog.html')" class="flex items-center gap-2 text-gray-500 hover:text-primary font-semibold mb-8 transition-colors">
+                    <i class="ph-bold ph-arrow-left"></i> Kembali ke Blog
+                </button>
+
+                <!-- Isi Konten -->
+                <div id="detail-content" class="prose prose-lg text-gray-600">
+                    <!-- Konten akan diisi lewat JavaScript -->
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/shared.js"></script>
+    <script>
+        fetch('includes/navbar.html').then(r => r.text()).then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+            if (typeof setActiveNav === 'function') setActiveNav();
+            else document.dispatchEvent(new Event('navbar:ready'));
+        });
+        fetch('includes/modals.html').then(r => r.text()).then(html => {
+            document.getElementById('modals-container').innerHTML = html;
+        });
+        fetch('includes/footer.html').then(r => r.text()).then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+        });
+
+        // Get blog ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogId = urlParams.get('id');
+
+        if (blogId && blogData[blogId]) {
+            const data = blogData[blogId];
+            document.getElementById('detail-title').innerText = data.title;
+            document.getElementById('detail-date').innerHTML = `<i class="ph-fill ph-calendar"></i> ${data.date}`;
+            document.getElementById('detail-category').innerText = data.category;
+            document.getElementById('detail-img').src = data.image;
+            document.getElementById('detail-content').innerHTML = data.content;
+            document.title = data.title + ' - TanamKita';
+        }
+    </script>
+
+</body>
+</html>

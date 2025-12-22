@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - TanamKita</title>
+    <link rel="icon" type="" href="images/plant.png">
+    <!-- Mengambil Tailwind CSS dari CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Mengambil Ikon (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Konfigurasi Tailwind Custom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F5A3B',
+                        secondary: '#10B981',
+                        surface: '#F0FDF4',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/shared.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navbar Include -->
+    <div id="navbar-container"></div>
+    
+    <!-- Modals Include -->
+    <div id="modals-container"></div>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative bg-primary min-h-[600px] flex items-center overflow-hidden">
+            <!-- Background Decorations -->
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+            <div class="absolute top-0 right-0 w-2/3 h-full bg-emerald-600/20 filter blur-[100px] rounded-full translate-x-1/3"></div>
+
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 pt-10 pb-20">
+                <!-- Text Content -->
+                <div class="text-white space-y-8">
+
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                        Tumbuh Bersama <span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-emerald-200">TanamKita</span>
+                    </h1>
+                    <p class="text-gray-300 text-lg leading-relaxed max-w-lg">
+                        Kami hadir untuk menghijaukan lingkungan Anda. Lebih dari sekadar toko tanaman, kami adalah partner Anda dalam menciptakan kehidupan yang lebih sejuk dan asri.
+                    </p>
+
+                </div>
+
+                <!-- Image Content (Floating) -->
+                <div class="hidden md:flex justify-center relative h-[500px]">
+                    <img src="images/4.png" 
+                         alt="Tanaman Hero" 
+                         class="floating-plant relative z-10 h-full w-auto object-cover drop-shadow-2xl"
+                         style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="relative group">
+                        <div class="absolute -top-6 -left-6 w-24 h-24 bg-emerald-100 rounded-full -z-10 group-hover:bg-secondary transition-colors duration-500"></div>
+                        <img src="images/sawah.jpg" class="rounded-2xl shadow-xl w-full h-[400px] object-cover">
+                    </div>
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-bold text-primary">Tentang Kami</h2>
+                        <div class="w-20 h-1 bg-secondary rounded-full"></div>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            TanamKita didirikan dengan misi sederhana: <b>Menghubungkan kembali manusia dengan alam.</b> Di tengah hiruk pikuk kota yang padat, kami percaya bahwa satu pot tanaman kecil bisa membawa perubahan besar pada suasana hati dan kesehatan mental.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-24 bg-surface relative overflow-hidden">
+            <!-- Ornament -->
+            <i class="ph-fill ph-leaf absolute -top-10 -right-10 text-[300px] text-primary opacity-5 rotate-45"></i>
+
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-primary">Kenapa Memilih TanamKita?</h2>
+                    <p class="text-gray-500 mt-2">Prinsip yang selalu kami pegang teguh</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Value 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-transparent hover:border-secondary group">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                            <i class="ph-fill ph-plant text-3xl text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3">100% Tanaman Sehat</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Setiap tanaman melalui proses karantina dan pengecekan kesehatan ketat sebelum dikirim ke rumah Anda.</p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-transparent hover:border-secondary group">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                            <i class="ph-fill ph-truck text-3xl text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3">Garansi Pengiriman</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Tanaman rusak saat sampai? Kami ganti baru tanpa biaya tambahan. Packaging kami didesain anti-guncangan.</p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-transparent hover:border-secondary group">
+                        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                            <i class="ph-fill ph-chats-circle text-3xl text-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-3">Konsultasi Gratis</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Bingung cara merawatnya? Tim kami siap menjawab pertanyaan Anda kapan saja melalui WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Include -->
+    <div id="footer-container"></div>
+
+    <!-- Load JavaScript -->
+    <script>
+        // Load navbar
+        fetch('includes/navbar.html').then(r => r.text()).then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+            // Notify scripts that navbar has been loaded into the DOM
+            document.dispatchEvent(new Event('navbar:ready'));
+        });
+
+        // Load modals
+        fetch('includes/modals.html').then(r => r.text()).then(html => {
+            document.getElementById('modals-container').innerHTML = html;
+        });
+
+        // Load footer
+        fetch('includes/footer.html').then(r => r.text()).then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+        });
+    </script>
+    <script src="js/shared.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>

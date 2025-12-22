@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - TanamKita</title>
+    <link rel="icon" type="" href="images/plant.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0F5A3B',
+                        secondary: '#10B981',
+                        surface: '#F0FDF4',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="css/shared.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <div id="navbar-container"></div>
+    <div id="modals-container"></div>
+
+    <!-- ================= HALAMAN 3: BLOG LIST ================= -->
+    <main>
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-primary">Blog TanamKita</h2>
+                    <p class="text-gray-500 mt-2">Tips merawat, inspirasi dekorasi, dan info terkini</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Blog 1: Anggrek -->
+                    <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition group flex flex-col h-full">
+                        <div class="h-56 overflow-hidden relative">
+                             <img src="images/anggrek2.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 text-xs text-gray-400 mb-3 font-semibold uppercase tracking-wider">
+                                <span class="text-secondary">TIPS</span><span>•</span><span>12 DES 2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug hover:text-secondary transition">Cara Merawat Anggrek Agar Rajin Berbunga</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Anggrek memang cantik, tapi seringkali susah berbunga kembali. Simak rahasia perawatannya di sini.</p>
+                            <button onclick="smoothNavigate('blog-detail.html?id=anggrek')" class="text-primary font-bold text-sm hover:text-secondary flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">Baca Selengkapnya <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Blog 2: Pepaya -->
+                    <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition group flex flex-col h-full">
+                        <div class="h-56 overflow-hidden relative">
+                             <img src="images/pepaya.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 text-xs text-gray-400 mb-3 font-semibold uppercase tracking-wider">
+                                <span class="text-secondary">PANDUAN</span><span>•</span><span>10 DES 2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug hover:text-secondary transition">Cara Mudah Menanam Pepaya di Pot</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Tidak punya lahan luas? Jangan khawatir! Pepaya juga bisa tumbuh subur dan berbuah lebat di dalam pot.</p>
+                            <button onclick="smoothNavigate('blog-detail.html?id=pepaya')" class="text-primary font-bold text-sm hover:text-secondary flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">Baca Selengkapnya <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Blog 3: Lidah Mertua -->
+                    <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition group flex flex-col h-full">
+                        <div class="h-56 overflow-hidden relative">
+                             <img src="images/lidah-mertua.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 text-xs text-gray-400 mb-3 font-semibold uppercase tracking-wider">
+                                <span class="text-secondary">REKOMENDASI</span><span>•</span><span>08 DES 2025</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-3 leading-snug hover:text-secondary transition">Manfaat Lidah Mertua sebagai Pembersih Udara Alami</h3>
+                            <p class="text-gray-500 text-sm mb-4 line-clamp-3 flex-grow">Tanaman ini tidak hanya estetik, tapi juga ampuh menyerap racun berbahaya di dalam ruangan Anda.</p>
+                            <button onclick="smoothNavigate('blog-detail.html?id=lidah-mertua')" class="text-primary font-bold text-sm hover:text-secondary flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">Baca Selengkapnya <i class="ph-bold ph-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('includes/navbar.html').then(r => r.text()).then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+            if (typeof setActiveNav === 'function') setActiveNav();
+            else document.dispatchEvent(new Event('navbar:ready'));
+        });
+        fetch('includes/modals.html').then(r => r.text()).then(html => {
+            document.getElementById('modals-container').innerHTML = html;
+        });
+        fetch('includes/footer.html').then(r => r.text()).then(html => {
+            document.getElementById('footer-container').innerHTML = html;
+        });
+    </script>
+    <script src="js/shared.js"></script>
+
+</body>
+</html>
